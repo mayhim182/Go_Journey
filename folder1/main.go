@@ -111,4 +111,16 @@ func sum(nums ...int) {
 		total += num
 	}
 	fmt.Println(total)
+
+	nextInt := intSeq()
+
+	fmt.Println(nextInt)
+}
+
+func intSeq() func() int {
+	i := 0
+	return func() int {
+		i++
+		return i
+	}
 }
