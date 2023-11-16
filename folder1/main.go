@@ -11,6 +11,17 @@ func main() {
 	fmt.Println("Hello world")
 	generalFunc()
 	constant()
+
+	i := 1
+	fmt.Println("initial:", i)
+
+	zeroval(i)
+	fmt.Println("zeroval:", i)
+
+	zeroptr(&i) //Passing i by reference
+	fmt.Println("zeroptr:", i)
+
+	fmt.Println("pointer:", &i)
 }
 
 func generalFunc() {
@@ -130,4 +141,12 @@ func fact(n int) int {
 		return 1
 	}
 	return n * fact(n-1)
+}
+
+func zeroval(ival int) {
+	ival = 0
+}
+
+func zeroptr(iptr *int) {
+	*iptr = 0
 }
